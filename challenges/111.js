@@ -22,12 +22,14 @@ let dogs = [
   { name: 'Bella', age: 8 },
 ];
 
+// It might be better idea to pass in dogs as a parameter
 function filterDogs(minimumAge) {
-  let qualifyingDogs = [];
-  for (let i = 0; i < dogs.length; i++) {
-    // add dog to qualifyingDogs array if minimum age met
-  }
+  // add dog to qualifyingDogs array if minimum age met
+  // possible to do just as one-liner with return dog.filter(...)
+  // but this makes it a little easier to read/understand purpose
+  let qualifyingDogs = dogs.filter(dog => dog.age >= minimumAge);
   return qualifyingDogs;
 }
+
 
 module.exports = filterDogs;
